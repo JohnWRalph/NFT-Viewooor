@@ -3,14 +3,23 @@
 import nfts from "../store/nfts";
 
 
-function pushNFTsToCollection( data) {
+function pushNFTsToCollection(collection, NFTs) {
     // chainAccount = ethereumAccount;
     // console.log($nfts)
-    console.log(nfts)
-    if (nfts && nfts.length) {
-        let nfts = nfts.concat(data);
+   
+    console.log("collection",nfts)
+    if (collection && collection.length) {
+        collection = collection.concat(NFTs);
+        collection.forEach(function (collection, index) {
+            collection.index = index;
+        })
+        return collection;
     } else {
-        nfts.set(data);
+       collection.set(NFTs);
+        collection.forEach(function (collection, index) {
+            collection.index = index;
+        })
+        return collection
     }
 }
 

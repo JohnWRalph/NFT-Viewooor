@@ -10,7 +10,6 @@
 <div id="myModal" class="modal" style="display:{$walletModalStatus}">
     <!-- <span class="close">&times;</span> -->
 
-
     <div id="walletButtons">
         <div>
             {#if $ethereumAccount}
@@ -20,10 +19,7 @@
             {:else}
                 <ConnectEthereumWallet />
             {/if}
-        </div>
-        <div />
-
-        <div id="solanaButton">
+       
             {#if $solanaAccount}
                 {"Connected Solana Account: " +
                     displaySolanaAddress($solanaAccount)}
@@ -31,6 +27,7 @@
                 <ConnectSolanaWallet />
             {/if}
         </div>
+        <div />
     </div>
 </div>
 
@@ -42,19 +39,19 @@
         border: 1px solid white;
         /* border: 2px solid rgb(1, 1, 1); */
         margin-bottom: 5px;
-z-index: 100;
+        z-index: 100;
         /* width: 100%; */
         margin-left: 70%;
     }
 
     .modal {
-        position: fixed;
+    
         width: 30%;
         height: 100%;
         transition: transform 1s ease-out, opacity 1s ease-out;
         /* Add a transition to the transform and opacity properties */
     }
-    .close {
+    /* .close {
         color: rgb(208, 200, 200);
         float: left;
         margin-left: 00px;
@@ -65,7 +62,7 @@ z-index: 100;
         background-color: rgb(255, 255, 255);
         border-top-left-radius: 50px;
         border-bottom-left-radius: 50px;
-    }
+    } */
 
     /* .modal.close {
         transform: translateX(23%);
@@ -74,7 +71,7 @@ z-index: 100;
 
     #walletButtons {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+      text-align: center;
+        
     }
 </style>

@@ -1,4 +1,4 @@
-import { NFTType, type NFT } from "../domain/nft";
+import type {NFT, NFTType } from "../domain/nft";
 import nfts from "../store/nfts";
 
 let containsValue: boolean;

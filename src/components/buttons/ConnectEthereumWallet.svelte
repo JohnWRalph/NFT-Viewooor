@@ -30,7 +30,7 @@
       await connectMetaMask().then((address) =>
         fetchNFTsByAddress(address).then((data) => {
           // ToDo: Refactor
-          function pushNFTsToCollection(data) {
+          function pushNFTsToCollection($nfts, data) {
             if ($nfts && $nfts.length) {
               $nfts = $nfts.concat(data);
               $nfts.forEach(function (nft, index) {
@@ -40,7 +40,7 @@
               nfts.set(data);
             }
           }
-          pushNFTsToCollection(data)
+          pushNFTsToCollection(nfts, data)
      
         })
       );
@@ -58,14 +58,14 @@
       await connectGME().then((address) =>
         fetchNFTsByAddress(address).then((data) => {
           // ToDo: refactor
-          function pushNFTsToCollection(data) {
+          function pushNFTsToCollection($nfts, data) {
             if ($nfts && $nfts.length) {
               $nfts = $nfts.concat(data);
             } else {
-              nfts.set(data);
+              $nfts.set(data);
             }
           }
-          pushNFTsToCollection(data);
+          pushNFTsToCollection($nfts, data);
           $nfts.forEach(function (nft, index) {
             nft.index = index;
           });
